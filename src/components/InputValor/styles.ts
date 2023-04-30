@@ -35,6 +35,11 @@ const CustomInput = styled.input`
     width: 40%;
     font-size: ${(props) => props.theme.fontSizes.sm};
   }
+
+  @media (max-width: 390px) {
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
 `;
 
 export default CustomInput;

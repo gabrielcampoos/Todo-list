@@ -28,6 +28,11 @@ const CardStyled = styled.div`
     width: 80%;
     font-size: ${(props) => props.theme.fontSizes.sm};
   }
+
+  @media (max-width: 390px) {
+    width: 80%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
 `;
 
 export default CardStyled;

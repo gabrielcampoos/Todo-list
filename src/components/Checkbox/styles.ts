@@ -21,6 +21,11 @@ const CheckboxContainer = styled.div`
     width: 40%;
     font-size: ${(props) => props.theme.fontSizes.sm};
   }
+
+  @media (max-width: 390px) {
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
 `;
 
 const Text = styled.label`
@@ -33,6 +38,11 @@ const Text = styled.label`
   }
 
   @media (max-width: 500px) {
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
+
+  @media (max-width: 390px) {
     width: 40%;
     font-size: ${(props) => props.theme.fontSizes.sm};
   }
@@ -60,6 +70,11 @@ const HiddenCheckbox = styled.input.attrs({
   }
 
   @media (max-width: 500px) {
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
+
+  @media (max-width: 390px) {
     width: 40%;
     font-size: ${(props) => props.theme.fontSizes.sm};
   }
