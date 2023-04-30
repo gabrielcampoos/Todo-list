@@ -24,7 +24,7 @@ const Container = styled.main<React.CSSProperties>`
   }
 
   @media (max-width: 390px) {
-    width: 90%;
+    width: 100%;
     font-size: ${(props) => props.theme.fontSizes.sm};
   }
 `;

@@ -30,7 +30,7 @@ const CardStyled = styled.div`
   }
 
   @media (max-width: 390px) {
-    width: 80%;
+    width: 100%;
     font-size: ${(props) => props.theme.fontSizes.sm};
   }
 `;
