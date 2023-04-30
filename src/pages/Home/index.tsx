@@ -1,9 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
 import ButtonStyled from "../../components/Button/styles";
 import Card from "../../components/Card";
+
 import Container from "../../components/Container/styles";
 import TitleDefault from "../../components/Heading";
-import Input from "../../components/Input";
+import {
+  default as Input,
+  default as InputValor,
+} from "../../components/Input";
 import { Tarefa } from "../../types";
 import { gerarData, gerarId } from "../../utils/geradorData";
 // import listaTarefas from '../../database';
@@ -11,6 +15,7 @@ import { gerarData, gerarId } from "../../utils/geradorData";
 const Home: React.FC = () => {
   // estados de um componente
   const [titulo, setTitulo] = useState("");
+  const [valor, setValor] = useState("");
   const [listaTarefas, setListaTarefas] = useState<Tarefa[]>([]);
 
   // 1 - quando o componente monta
@@ -39,7 +44,7 @@ const Home: React.FC = () => {
   });
 
   const TitleMemo = useMemo(() => {
-    return <TitleDefault title="Lista de Tarefas" />;
+    return <TitleDefault title="Lista de Professores" />;
   }, []);
 
   // 1 - se uma função não precisa de parametros, dai chama no evento sem a necessidade da arrow function e abre e fecha parenteses da função
@@ -49,27 +54,58 @@ const Home: React.FC = () => {
     const novaTarefa: Tarefa = {
       id: gerarId(),
       titulo: titulo,
+      valor: valor,
       criadoEm: gerarData(),
+      onClick: del,
     };
 
     setListaTarefas((prevState) => [novaTarefa, ...prevState]);
     setTitulo("");
+    setValor("");
   };
+
+  const handleReset = () => {
+    setListaTarefas([]);
+  };
+
+  function del() {
+    console.log("oi");
+  }
 
   return (
     <Container display="flex" alignItems="center" flexDirection="column">
       {TitleMemo}
-      <Input
-        valor={titulo}
-        handleChange={setTitulo}
-        id="task"
-        name="tarefa"
-        placeholder="Descreva a tarefa..."
-        type="text"
-      />
 
+      <Container
+        display="flex"
+        alignItems="center"
+        justifyContent="space-between"
+        flexDirection="row"
+        width="50%"
+      >
+        <p>
+          <button style={{ width: "3rem" }} onClick={() => handleReset()}>
+            Reset
+          </button>
+        </p>
+        <Input
+          valor={titulo}
+          handleChange={setTitulo}
+          id="nome"
+          name="nome"
+          placeholder="Digite o nome..."
+          type="text"
+        />
+        <InputValor
+          valor={valor}
+          handleChange={setValor}
+          id="valor"
+          name="valor"
+          placeholder="Digite o valor..."
+          type="number"
+        />
+      </Container>
       <ButtonStyled onClick={addNewCard}>Adicionar</ButtonStyled>
-
       {/* 
 
 				TO-DO
@@ -79,9 +115,17 @@ const Home: React.FC = () => {
 				4 - Criar o Componente Button do App - OK
 
 			*/}
-
-      {listaTarefas.map(({ id, criadoEm, titulo }) => {
-        return <Card key={id} id={id} titulo={titulo} criadoEm={criadoEm} />;
+      {listaTarefas.map(({ id, criadoEm, titulo, valor }) => {
+        return (
+          <Card
+            key={id}
+            id={id}
+            titulo={titulo}
+            valor={valor}
+            criadoEm={criadoEm}
+            onClick={() => del()}
+          />
+        );
       })}
     </Container>
   );

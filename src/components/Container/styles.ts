@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // interface ContainerProps {
 // 	disabled?: boolean;
@@ -7,10 +7,11 @@ import styled from 'styled-components';
 // dai é só adicionar esse tipo ao lado do CSSProperties
 // & ContainerProps
 const Container = styled.main<React.CSSProperties>`
-	display: ${(props) => props.display};
-	flex-direction: ${(props) => props.flexDirection};
-	align-items: ${(props) => props.alignItems};
-	justify-content: ${(props) => props.justifyContent};
+  display: ${(props) => props.display};
+  flex-direction: ${(props) => props.flexDirection};
+  align-items: ${(props) => props.alignItems};
+  justify-content: ${(props) => props.justifyContent};
+  width: ${(props) => props.width};
 `;
 
 export default Container;
