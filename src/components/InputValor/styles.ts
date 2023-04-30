@@ -27,7 +27,13 @@ const CustomInput = styled.input`
   }
 
   @media (max-width: 800px) {
-    width: 80%;
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
+
+  @media (max-width: 500px) {
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
   }
 `;
 

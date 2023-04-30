@@ -20,6 +20,10 @@ const ButtonStyled = styled.button`
   @media (max-width: 800px) {
     width: 80%;
   }
+
+  @media (max-width: 500px) {
+    width: 90%;
+  }
 `;
 
 export default ButtonStyled;

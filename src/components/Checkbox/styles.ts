@@ -11,11 +11,31 @@ const CheckboxContainer = styled.div`
 
   display: flex;
   align-items: center;
+
+  @media (max-width: 800px) {
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
+
+  @media (max-width: 500px) {
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
 `;
 
 const Text = styled.label`
   margin-left: 10px;
   font-size: 20px;
+
+  @media (max-width: 800px) {
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
+
+  @media (max-width: 500px) {
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
 `;
 
 const StyledCheckbox = styled.label``;
@@ -32,6 +52,16 @@ const HiddenCheckbox = styled.input.attrs({
 
   &:hover {
     filter: brightness(0.9);
+  }
+
+  @media (max-width: 800px) {
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
+
+  @media (max-width: 500px) {
+    width: 40%;
+    font-size: ${(props) => props.theme.fontSizes.sm};
   }
 `;
 
